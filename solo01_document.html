@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>solo01_document.html</title>
+</head>
+<body>
+    <h1>혼자 해보기 두 숫자를 입력 받아 + 버튼을 눌러 합계 계산하기</h1>
+    <input type="text" id="num1" placeholder="숫자만..."/>
+    <button onclick="result()">+</button>
+    <input type="text" id="num2" placeholder="숫자만..."/>
+    <span>=</span>
+    <strong id="result">0</strong>
+    <button onclick="clearn()">clear</button>
+    <script>
+        function result(){
+            var a = document.querySelector("#num1").value;
+            var b = document.querySelector("#num2").value;
+            var result = parseFloat(a)+parseFloat(b);
+            document.querySelector("#result").innerText=result;
+        };
+
+        function clearn(){
+            document.querySelector("#num1").value="";
+            document.querySelector("#num2").value="";
+            document.querySelector("#result").innerText=0;
+        };
+
+        
+    </script>
+</body>
+</html>

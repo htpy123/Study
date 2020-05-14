@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array.html</title>
+</head>
+<body>
+    <h1>array 혼자해보기</h1>
+    <input type="text" id="msg" placeholder="할일 입력..."/>
+    <button onclick="save()">저장</button>
+    <button onclick="show()">저장된 내용 보기</button>
+    <button onclick="showfull()">저장된 내용 한번에 보기</button>
+    <p id="console"></p>
+    <p id="consolefull"></p>
+    <script>
+        var msgs=[];
+        function save(){
+            msgs.push(document.querySelector("#msg").value);
+            alert("저장 되었습니다.");
+            document.querySelector("#msg").value="";
+        };
+        function show(){
+            for(var i=0;i<msgs.length;i++){
+                if(i==msgs.length-1)
+                    document.querySelector("#console").innerText+=msgs[i]+'\n';
+            }
+        };
+        
+        function showfull(){
+            for(var i=0;i<msgs.length;i++){
+                document.querySelector("#consolefull").innerText=msgs[i]+'\n';
+            }
+        }
+        
+    </script>
+</body>
+</html>

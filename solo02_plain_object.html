@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>plain_object.html</title>
+</head>
+<body>
+    <input type="text" id="indata" placeholder="입력해주세요..">
+    <button onclick="newdataa()">넣기</button>
+    <button onclick="conso()">지역변수 가능?</button>
+    <strong id="ininner">0</strong>
+    <script>
+        var mem1={};
+        var i =0;
+        function newdataa(){
+            mem1.name=document.querySelector("#indata").value;
+            document.querySelector("#ininner").innerText=mem1.name;
+            i++;
+        };
+        function conso(){
+            console.log(mem1.name);
+        }
+        
+    </script>
+<!--     
+질문-
+input요소를 이용해 문자열을 받아와서
+나중에 var mem1뒤에 연결지어서 데이터를 포함시킬수있는가
+지역변수 별로 이용가능한가 -->
+</body>
+</html>
