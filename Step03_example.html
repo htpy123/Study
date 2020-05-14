@@ -13,10 +13,10 @@
     <button onclick="showBtn()">저장된 정보 보기</button>
     <p id="console"></p>
     <script>
+        var a;
         // 빈 object를 페이지 로딩 시점에 따라 미리 만들어 놓는다.
         // 임시 저장 버튼을 눌렀을때 호출되는 함수
-        var obj={
-        };
+        var obj={};
 
         function saveBtn(){
             // var obj={}; 지역변수
@@ -26,7 +26,8 @@
         };
 
         function showBtn(){
-            document.querySelector("#console").innerText="내 이름은 "+obj.name+"\n내 주소는 "+obj.addr+" 입니다.";
+            document.querySelector("#console").innerText=
+            "내 이름은 "+obj.name+"\n내 주소는 "+obj.addr+" 입니다.";
         };
     </script>
 </body>
