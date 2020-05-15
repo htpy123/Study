@@ -2,7 +2,7 @@
 - - -
 수업을 듣고 혼자 해보기   
 `Study 발전하기`   
-###javascript   
+### javascript   
 1.number type
 ```
 var num1=10;   //int(정수)
