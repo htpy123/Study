@@ -1,8 +1,8 @@
 # acorn2020_javascript
 - - -
 수업을 듣고 혼자 해보기   
-`Study 발전하기`
-###javascript
+`Study 발전하기`   
+###javascript   
 1.number type
 ```
 var num1=10;   //int(정수)
