@@ -20,10 +20,34 @@
         friends.push({name:"이봉하",phone:"017",email:"ccc@"});
         friends.push({name:"이세희",phone:"018",email:"ddd@"});
         friends.push({name:"백운용",phone:"019",email:"eee@"});
-        
+        /*
+        document.querySelector("#friendBtn")
+        .addEventListener("click",function(){
+            var inputName=document.querySelector("#inputName").value
+            var isExist=false;//변수 선언후 초기값 부여
+
+            for(var i=0;i<friends.length;i++){
+                var tmp=friends[i];
+                if(inputName==tmp.name){
+                    document.querySelector("#console").innerText=
+                        tmp.name+tmp.phone+tmp.email;
+                    isExist=true;
+                }
+            }
+            //for 문 종료 후에 if 문 블럭에 실행순서가 갔었는지
+            //여부를 알고 싶다면??
+            if(isExist==false){
+                document.querySelector("#console").innerText=
+                    inputName+" 으로 검색된 정보는 없습니다.";
+            }
+        });*/ //강사님 코딩 2↑
+
+
+
         document.querySelector("#inputName")
         .addEventListener("keyup",function(event){
             if(event.key=="Enter"){
+                var isExist=false;//변수 선언후 초기값 부여
                 for(var i=0;i<friends.length;i++){
                     var inputName = document.querySelector("#inputName").value;
                     if(inputName==friends[i].name){
@@ -39,6 +63,10 @@
                 };
             };
         });
+        
+
+
+
         /*
         document.querySelector("#friendBtn")
         .addEventListener("click",function(){
@@ -50,7 +78,11 @@
                 }
             }
         });
-        */ //강사님 코딩 ↑
+        */ //강사님 코딩1 ↑
+
+
+
+        
         /*
         document.querySelector("#inputName")
         .addEventListener("keyup",function(){
