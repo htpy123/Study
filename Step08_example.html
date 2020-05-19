@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step08_example.html</title>
+</head>
+<body>
+    <h1>반복문 활용 예제 테스트중...</h1>
+    <input type="text" id="inputName" placeholder="검색할 이름..."/>
+    <button id="friendBtn">검색</button>
+    <p id="console"></p>
+    <script>
+        //친구 정보를 담을 배열
+        var friends=[];
+        //배열에 sample 데이터 담기
+        // friends.push("김구라/010-111-2222/aaa@naver.com/남"); 비효율적이다.
+        friends.push({name:"김구라",phone:"010",email:"aaa@"});
+        friends.push({name:"김진호",phone:"011",email:"bbb@"});
+        friends.push({name:"이봉하",phone:"017",email:"ccc@"});
+        friends.push({name:"이세희",phone:"018",email:"ddd@"});
+        friends.push({name:"백운용",phone:"019",email:"eee@"});
+        
+        document.querySelector("#inputName")
+        .addEventListener("keyup",function(event){
+            if(event.key=="Enter"){
+                for(var i=0;i<friends.length;i++){
+                    var inputName = document.querySelector("#inputName").value;
+                    if(inputName==friends[i].name){
+                        // var b = friends[i];
+                        // document.querySelector("p").innerText=b;   -> 결과값 [object Object]로 출력됨
+                        // document.querySelector("p").innerText=JSON.stringify(friends[i]);
+                        document.querySelector("p").innerText="이름:"+friends[i].name+"\n핸드폰번호:"+friends[i].phone+"\n이메일:"+friends[i].email;
+                        // break; else를 붙여서 사용할때 방법 1
+                    }else{
+                        document.querySelector("#console").innerText=
+                            inputName+" 으로 검색된 정보는 없습니다.";
+                    }
+                };
+            };
+        });
+        /*
+        document.querySelector("#friendBtn")
+        .addEventListener("click",function(){
+            var inputName=document.querySelector("#inputName").value;
+            for(var i=0;i<friends.length;i++){
+                var tmp=friends[i];
+                if(inputName==tmp.name){
+                    document.querySelector("#console").innerText=tmp.name+tmp.phone+tmp.email;
+                }
+            }
+        });
+        */ //강사님 코딩 ↑
+        /*
+        document.querySelector("#inputName")
+        .addEventListener("keyup",function(){
+            if(event.key=="Enter"){
+                var nam=document.querySelector("#inputName").value
+                
+                for(var i=0;i<friends.length;i++){
+                    var a = JSON.stringify(friends[i]);
+                    if(a.indexOf(nam)!==-1){
+                        document.querySelector("#console").innerText+=a+"\n";
+                    }
+                }
+            }
+        })*/
+        //혼자 찾아서 코딩해본 검색해보기 기능 ↑
+    </script>
+</body>
+</html>
