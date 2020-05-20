@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step09_if3.html</title>
+</head>
+<body>
+    <h1>다중 if문 테스트중...</h1>
+    <button id="inputBtn">점수 입력 하기</button>
+    <p id="console"></p>
+    <script>
+        document.querySelector("#inputBtn")
+        .addEventListener("click",function(){
+            //입력받은 문자열을 숫자로 바꿔서 변수에 담는다.
+            var jomsu = parseFloat(prompt("점수를 입력하세요"));
+            /*
+                점수가
+                90 이상이면 "A"
+                80 이상이면 "B"
+                70 이상이면 "C"
+                60 이상이면 "D"
+                60 미만이면 "F"
+                라는 문자열을 P요소에 출력해 보세요.
+            */
+            // if(90<=jomsu&&jomsu<=100){
+            //     document.querySelector("p").innerText="A";
+            // }else if(80<=jomsu&&jomsu<90){
+            //     document.querySelector("p").innerText="B";
+            // }else if(70<=jomsu&&jomsu<80){
+            //     document.querySelector("p").innerText="C";
+            // }else if(60<=jomsu&&jomsu<70){
+            //     document.querySelector("p").innerText="D";
+            // }else if(60>jomsu){
+            //     document.querySelector("p").innerText="F";
+            // }else{
+            //     alert("점수는 0~100까지의 숫자만 입력해주세요!");
+            //     document.querySelector("p").innerText="점수는 0~100까지의 숫자만 입력해주세요!";
+            // }
+            //굳이 &&쓸필요없다고 하심
+            //숫자는 0~100까지밖에 없다고 가정
+            
+            
+            // if(jomsu>=90){
+            //     document.querySelector("p").innerText="A";
+            // }else if(jomsu>=80){
+            //     document.querySelector("p").innerText="B";
+            // }else if(jomsu>=70){
+            //     document.querySelector("p").innerText="C";
+            // }else if(jomsu>=60){
+            //     document.querySelector("p").innerText="D";
+            // }else{
+            //     document.querySelector("p").innerText="F";
+            // }
+
+            var grade;
+            if(jomsu>=90){
+                grade="A"; //적당한 학점을 담는다.
+            }else if(jomsu>=80){
+                grade="B";
+            }else if(jomsu>=70){
+                grade="C";
+            }else if(jomsu>=60){
+                grade="D";
+            }else{
+                grade="F";
+            }
+            document.querySelector("p").innerText=grade;
+        });
+    </script>
+</body>
+</html>
