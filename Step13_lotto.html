@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step13_lotto.html</title>
+</head>
+<body>
+    <h1>lotto 추첨기 만들기</h1>
+    <p id="console"></p>
+    <script>
+        //1~45 사이의 랜덤한 정수 얻어내난 븡법
+        var lottoNum = parseInt(Math.random()*45)+1;
+
+        var nums=[];
+        //1. 로또 번호 6개를 랜덤하게 얻어내서 nums 배열에 저장\자해 보세요
+
+        ///2. nums 배열에 저장된 숫자를 p 요소에 순서대로 출력해 보세요.
+    
+
+        // var newE=["A","B","C","D","E","F"];
+        // for(let i=0;i<newE.length;i++){
+        // newE[i]=parseInt(Math.random()*45)+1;
+        // nums.push(newE[i]);
+        // };
+        // nums.forEach((i,index)=>{
+        // document.querySelector("#console").innerText+=nums[index]+"\n";
+        // });
+
+
+        // var newE=["A","B","C","D","E","F"];
+        // newE.forEach((i,index)=>{
+        // newE[index]=parseInt(Math.random()*45)+1;
+        // nums.push(newE[index]);
+        // });
+        // nums.forEach((i,index)=>{
+        // document.querySelector("#console").innerText+=nums[index]+"\n";
+        // });
+
+        //중복안되게 해볼까?
+        
+        while(true){
+            let lottoNum=parseInt(Math.random()*45)+1;
+            
+            if(nums.indexOf(lottoNum) == -1){
+                nums.push(lottoNum);
+                if(nums.length==6){
+                break;
+                }
+            }
+        }
+
+        // let line="";
+        //숫자가 작은 순서대로 출력해 볼까?
+        for(let i=0;i<nums.length;i++){
+            for(let j=0;j<nums.length;j++){
+                if(nums[i]<nums[j]){
+                    let sample=[];
+                    sample=nums[i];
+                    nums[i]=nums[j];
+                    nums[j]=sample;
+                }
+            }
+        }
+        for(let i=0;i<nums.length;i++){
+            document.querySelector("#console").innerText+=nums[i]+"\n";
+            // line=line+nums[i]+"\n";
+        }
+        
+
+
+
+
+
+
+
+
+        //강사님이 짜신 코드
+        // while(true){
+        //     let lottoNum=parseInt(Math.random()*45)+1;
+            
+        //     if(nums.indexOf(lottoNum) == -1){
+        //         nums.push(lottoNum);
+        //         if(nums.length==6){
+        //         break;
+        //         }
+        //     }
+        // }
+
+        // let line="";
+        // for(let i=0;i<nums.length;i++){
+            
+        //     line=line+nums[i]+"\n";
+        // }
+        // document.querySelector("#console").innerText=line;
+
+
+
+
+
+
+
+
+
+
+
+        // ↓진짜 못했다.
+        // var newE=["A","B","C","D","E","F"];
+        // newE.forEach((i,index)=>{
+        // newE.push(index)=parseInt(Math.random()*45)+1;
+        // nums.push(newE[index]);
+        // });
+        // for(let i=0;i<newE.length;i++){
+        //     for(let j=0;j<newE.length;j++){
+        //         if(newE.indexOf(newE[j]) == -1){
+        //             newE[j]=parseInt(Math.random()*45)+1;
+        //         }
+        //     }
+        // }
+        // nums.forEach((i,index)=>{
+        // document.querySelector("#console").innerText+=nums[index]+"\n";
+        // });
+
+
+
+
+
+
+
+
+
+        // let addA=parseInt(Math.random()*45)+1;
+        // let addB=parseInt(Math.random()*45)+1;
+        // let addC=parseInt(Math.random()*45)+1;
+        // let addD=parseInt(Math.random()*45)+1;
+        // let addE=parseInt(Math.random()*45)+1;
+        // let addF=parseInt(Math.random()*45)+1;
+        // nums.push(addA);
+        // nums.push(addB);
+        // nums.push(addC);
+        // nums.push(addD);
+        // nums.push(addE);
+        // nums.push(addF);
+        // for(let i=0;i<nums.length;i++){
+        // document.querySelector("#console").innerText+=nums[i]+"\n";
+        // };
+
+
+
+
+        
+
+    </script>
+</body>
+</html>

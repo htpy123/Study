@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step13_lotto.html</title>
+    <style>
+        #wrapper img{
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>lotto 추첨기 만들기</h1>
+    <button id="rouletteBtn">추첨하기</button>
+    <div id="wrapper">
+
+    </div>
+    <script>
+        
+        //쌓이지 않게 만들기
+        document.querySelector("#rouletteBtn")
+        .addEventListener("click",function(){
+            
+            
+            //remove사용하는 방법도 고민 계속해보자
+            document.querySelector("div").innerText="";
+
+            var nums=[];
+
+            while(true){
+                let lottoNum=parseInt(Math.random()*45)+1;
+            
+                if(nums.indexOf(lottoNum) == -1){
+                    nums.push(lottoNum);
+                    if(nums.length==6){
+                    break;
+                    }
+                }
+            }
+            for(let i=0;i<nums.length;i++){
+                for(let j=0;j<nums.length;j++){
+                    if(nums[i]<nums[j]){
+                        let sample=[];
+                        sample=nums[i];
+                        nums[i]=nums[j];
+                        nums[j]=sample;
+                    }
+                }
+            }
+        
+            for(let i=0;i<nums.length;i++){
+                let newImg = document.createElement("img");
+            
+                newImg.setAttribute("src",`images/lotto-ball-${nums[i]}.png`);
+                newImg.setAttribute("id","deLete");
+                document.querySelector("#wrapper").append(newImg);
+                
+            }
+            
+        });
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        // //1~45 사이의 랜덤한 정수 얻어내난 방법
+        // // var lottoNum = parseInt(Math.random()*45)+1;
+
+        // var nums=[];
+
+
+        // //중복안되게 해볼까?
+        
+        // while(true){
+        //     let lottoNum=parseInt(Math.random()*45)+1;
+            
+        //     if(nums.indexOf(lottoNum) == -1){
+        //         nums.push(lottoNum);
+        //         if(nums.length==6){
+        //         break;
+        //         }
+        //     }
+        // }
+
+        // // let line="";
+        // //숫자가 작은 순서대로 출력해 볼까?
+        // for(let i=0;i<nums.length;i++){
+        //     for(let j=0;j<nums.length;j++){
+        //         if(nums[i]<nums[j]){
+        //             let sample=[];
+        //             sample=nums[i];
+        //             nums[i]=nums[j];
+        //             nums[j]=sample;
+        //         }
+        //     }
+        // }
+        // //숫자가 아닌 이미지 이용하기
+        // for(let i=0;i<nums.length;i++){
+        //    let newImg = document.createElement("img");
+        //     // newImg.setAttribute("src","images/lotto-ball-"+nums[i]+".png");
+        //                                     // ""+ +""
+        //     newImg.setAttribute("src",`images/lotto-ball-${nums[i]}.png`);
+        //                                     // ` ${} `
+        //     document.querySelector("#wrapper").append(newImg);
+        // }
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        //이해가 잘안감 자세히 다시 보기
+        // setInterval(()=>{
+        //     let num=parseInt(Math.random()*45)+1;
+        //     console.log(num);
+        // },1000);
+
+    </script>
+</body>
+</html>
