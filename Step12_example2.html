@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step12_example2.html</title>
+    <style>
+        #toDoList li:hover{
+            background-color: yellow;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>createElement 테스트중...</h1>
+    <input type="text" id="inputMsg" placeholder="할일 입력..."/>
+    <button id="addBtn">추가</button>
+    <ul id="toDoList">
+
+    </ul>
+    <script>
+        document.querySelector("#addBtn")
+        .addEventListener("click",function(){
+            let add=document.createElement("li");
+            add.innerText=document.querySelector("#inputMsg").value;
+            document.querySelector("#toDoList").append(add);
+            add.addEventListener("click",function(){
+                console.log("li요소를 클릭했네");
+                this.remove();
+            });
+        });
+        
+        // document.querySelector("#addBtn")
+        // .addEventListener("click",()=>{
+        //     let add2=document.createElement("button");
+        //     let add=document.createElement("li");
+        //     add2.innerText="삭제";
+        //     add.innerText=document.querySelector("#inputMsg").value;
+        //     document.querySelector("#toDoList").append(add,add2);
+        //     add2.addEventListener("click",()=>{
+        //         add.remove();
+        //         add2.remove();
+        //     });
+        // });
+        // document.querySelector("#inputMsg")
+        // .addEventListener("keyup",()=>{
+        //     if(event.key=="Enter"){
+        //         let add=document.createElement("li");
+        //         add.innerText=document.querySelector("#inputMsg").value;
+        //         document.querySelector("#toDoList").append(add);
+        //     };
+        //     document.querySelector("#inputMsg").innerText="";
+
+        // });
+
+    </script>
+</body>
+</html>
