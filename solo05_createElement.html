@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>solo05_createElement.html</title>
+    <style>
+        #idTr:hover{
+            background-color: yellow;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>createElement 테스트 중...</h1>
+    <input type="text" id="inputNum" placeholder="번호입력..."/>
+    <input type="text" id="inputName" placeholder="이름입력..."/>
+    <input type="text" id="inputAddr" placeholder="주소입력..."/>
+    <button id="addBtn">추가</button>
+    <h1>추가된 회원 목록 입니다.</h1>
+    <table border="1" cellspacing="0">
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>주소</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        document.querySelector("#addBtn")
+        .addEventListener("click",()=>{
+            let addtr=document.createElement("tr");
+            addtr.setAttribute("id","idTr");
+            document.querySelector("tbody").append(addtr);
+            let arr=[];
+            addNum=document.querySelector("#inputNum").value;
+            addName=document.querySelector("#inputName").value;
+            addAddr=document.querySelector("#inputAddr").value;
+            arr.push(addNum);
+            arr.push(addName);
+            arr.push(addAddr);
+            for(let i=0;i<arr.length;i++){
+                let addtd=document.createElement("td");
+                addtd.innerText=arr[i];
+                addtr.append(addtd);
+            }
+            addtr.addEventListener("click",function(){
+                let isDelete=confirm("삭제할까요?");
+                if(isDelete){
+                    this.remove();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

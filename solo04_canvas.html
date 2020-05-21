@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>solo04_canvas.html</title>
+    <style>
+        canvas{
+            border:5px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h1>그림판 혼자 만들기</h1>
+    <canvas id="soloCanvas" width="500" height="700"></canvas>
+    <script>
+        var canvas=document.querySelector("#soloCanvas");
+        
+        var context=canvas.getContext("2d");
+        
+        var isDrawing=false;
+        
+        var thisColor="#000000";
+        var thisWidth=5;
+        
+        context.lineCap="round";
+        context.lineJoin="round";
+
+        document.querySelector("#soloCanvas")
+        .addEventListener("mousedown",function(event){
+            var x=event.offsetX;
+            var y=event.offsetY;
+
+            context.beginPath();
+            context.strokeStyle=thisColor;
+            context.lineWidth=thisWidth;
+            context.moveTo(x,y);
+
+            isDrawing=true;
+        });
+
+        document.querySelector("#soloCanvas")
+        .addEventListener("mousemove",function(event){
+            if(!isDrawing){
+                return;
+            }
+            var x=event.offsetX;
+            var y=event.offsetY;
+
+            context.lineTo(x,y);
+            context.stroke();
+        });
+
+        document.querySelector("#soloCanvas")
+        .addEventListener("mouseup",function(){
+            isDrawing=false;
+            context.closePath();
+
+        });
+
+    </script>
+</body>
+</html>
