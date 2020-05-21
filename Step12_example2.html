@@ -25,8 +25,12 @@
             add.innerText=document.querySelector("#inputMsg").value;
             document.querySelector("#toDoList").append(add);
             add.addEventListener("click",function(){
-                console.log("li요소를 클릭했네");
+                let dele=document.createElement("button");
+                dele.innerText="삭제";
+                let isDelete=confirm("삭제 할까요?");
+                if(isDelete){
                 this.remove();
+                }
             });
         });
         

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step12_createElement2.html</title>
+</head>
+<body>
+    <h1>createElement 테스트중...</h1>
+    <div id="wrapper">
+
+    </div>
+    <script>
+        /*
+            <a href="hello.html" class="my-link">이동하기</a>
+            위와 같은 구조의 a요소를 동적으로 만들기
+        */
+        
+        // let addALink=document.createElement("a");
+        // addALink.innerText="이동하기";
+        // addALink.setAttribute("href","hello.html");
+        // addALink.setAttribute("class","my-link");
+        // document.querySelector("#wrapper").append(addALink);
+
+        setInterval(function(){
+            let addALink=document.createElement("a");
+            addALink.innerText="이동하기";
+            addALink.setAttribute("href","hello.html");
+            addALink.setAttribute("class","my-link");
+            document.querySelector("#wrapper").append(addALink);
+        }, 1000);
+    </script>
+</body>
+</html>
