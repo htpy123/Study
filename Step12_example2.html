@@ -25,8 +25,8 @@
             add.innerText=document.querySelector("#inputMsg").value;
             document.querySelector("#toDoList").append(add);
             add.addEventListener("click",function(){
-                let dele=document.createElement("button");
-                dele.innerText="삭제";
+                // let dele=document.createElement("button");
+                // dele.innerText="삭제";
                 let isDelete=confirm("삭제 할까요?");
                 if(isDelete){
                 this.remove();
@@ -53,7 +53,7 @@
         //         add.innerText=document.querySelector("#inputMsg").value;
         //         document.querySelector("#toDoList").append(add);
         //     };
-        //     document.querySelector("#inputMsg").innerText="";
+        //     document.querySelector("#inputMsg").value="";
 
         // });
 

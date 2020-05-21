@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step12_example3.html</title>
+    <style>
+        #trStyle:hover{
+            background-color: yellow;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>createElement 테스트 중...</h1>
+    <input type="text" id="inputNum" placeholder="번호입력..."/>
+    <input type="text" id="inputName" placeholder="이름입력..."/>
+    <input type="text" id="inputAddr" placeholder="주소입력..."/>
+    <button id="addBtn">추가</button>
+    <h1>추가된 회원 목록 입니다.</h1>
+    <table border="1" cellspacing="0">
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>주소</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        
+        document.querySelector("#addBtn")
+        .addEventListener("click",()=>{
+            let addtr=document.createElement("tr");
+            addtr.setAttribute("id","trStyle");
+            document.querySelector("tbody").append(addtr);
+            let arr=[];
+            let addNum=document.querySelector("#inputNum").value;
+            let addName=document.querySelector("#inputName").value;
+            let addAddr=document.querySelector("#inputAddr").value;
+            arr.push(addNum);
+            arr.push(addName);
+            arr.push(addAddr);
+            for(let i=0;i<arr.length;i++){
+                let addtd=document.createElement("td");
+                let num=[50,150,200];
+                addtd.innerText=arr[i];
+                addtd.setAttribute("width",num[i]);
+                addtr.append(addtd);
+            }
+            addtr.addEventListener("click",function(){
+                // let isDelete=confirm("삭제 할까요?");
+                // if(isDelete){
+                if(confirm("삭제하시겠습니까?")){
+                    this.remove();
+                }
+            });
+            document.querySelector("#inputNum").value="";
+            document.querySelector("#inputName").value="";
+            document.querySelector("#inputAddr").value="";
+        });
+    </script>
+</body>
+</html>
