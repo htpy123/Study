@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuey01_hello.html</title>
+</head>
+<body>
+    <button  id="changeBtn">change!</button>
+    <button id="changeBtn2">change(jQuery활용)</button>
+    <p id="one">p1</p>
+    <p id="two">p2</p>
+    <!-- 외부 javascript 로딩하기 -->
+    <script src="js/my-util.js"></script>
+    <!-- jQuery 로딩하기 -->
+    <script src="js/jquery-3.5.1.js"></script>
+
+    <script>
+        // document.querySelector("#changeBtn")
+        select("#changeBtn")
+        .addEventListener("click",function(){
+            // document.querySelector("#one").innerText="김구라";
+            select("#one").innerText="김구라";
+            // document.querySelector("#two").innerText="해골";
+            select("#two").innerText="해골";
+        });
+        
+        // jQery를 활용해서 버튼을 click했을때 실행할 함스
+        $("#changeBtn2").on("click",function(){
+            // jQuery를 활용해서 innerText 넣어주기
+            $("#one").text("김구라");
+            $("#two").text("해골");
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //js/my-util.js 로 이동
+        // function select(sel){
+        //     return document.querySelector(sel);
+        // };
+
+
+
+
+    </script>
+</body>
+</html>
