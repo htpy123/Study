@@ -38,16 +38,20 @@
                     }
                 }
             }
-            for(let i=0;i<nums.length;i++){
-                for(let j=0;j<nums.length;j++){
-                    if(nums[i]<nums[j]){
-                        let sample=[];
-                        sample=nums[i];
-                        nums[i]=nums[j];
-                        nums[j]=sample;
-                    }
-                }
-            }
+            nums.sort(function(a,b){
+                return a-b;
+            });
+
+            // for(let i=0;i<nums.length;i++){
+            //     for(let j=0;j<nums.length;j++){
+            //         if(nums[i]<nums[j]){
+            //             let sample=[];
+            //             sample=nums[i];
+            //             nums[i]=nums[j];
+            //             nums[j]=sample;
+            //         }
+            //     }
+            // }
         
             for(let i=0;i<nums.length;i++){
                 let newImg = document.createElement("img");
